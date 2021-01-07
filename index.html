@@ -10,32 +10,197 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Big Banger</title>
 </head>
-<body\>
-    <div class="mt-5 text-center">
+<body>
+<div class="container-fluid text-center py-5">
+    <!-- <div class="mt-5 text-center">
         <h1>RPSLS</h1>
         <p>Created on 01.05.20 @4:05PM
             <br>
             by: Joseph Racca
         </p>
+    </div> -->
+
+    <div class="row pt-5">
+        <div class="col">
+            <!-- splash -->
+            <h1>RPSLS</h1>
+            <!-- can have some graphics around here floating around -->
+        </div>
     </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <div id="optionsPane" class="row py-5">
+        <div class="col">
+            <h1>GAME OPTIONS</h1>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+            <div class="row">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="aiPlayerBtn" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="aiPlayerBtn">Player.AI</label>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+                    <input type="radio" class="btn-check" name="btnradio" id="player2Btn" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="player2Btn">Player.2</label>
+                </div>
+
+                <div class="btn-group mt-3" role="group2" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="quick1Btn" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="quick1Btn">Quick1e</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="bestOf5Btn" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="bestOf5Btn">Best of 5</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="bestOf7Btn" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="bestOf7Btn">Best of 7</label>
+                </div>
+
+                <div class="div mt-3">
+                    <div class="row px-3">
+                        <button id="startGameBtn" type="button" class="btn btn-info">START</button>
+
+                        <div class="col">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- READY? -->
+    <div id="readyPane" class="row d-none">
+        <div class="col">
+            <h1>PLAYER <span id="pNum">1</span>, READY?</h1>
+            <div class="div mt-3">
+                <div class="row px-3">
+                    <button id="selectCharBtn" type="button" class="btn btn-info">SELECT CHARACTER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="choicePane" class="row mt-3 d-none">
+        <div class="col">
+            <h1>SELECT A CHARACTER FOR THIS ROUND</h1>
+            <div class="div mt-3">
+                <div class="row">
+                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
+                        <div id="rockBtn" class="card characterChoices" style="width: 13rem;">
+                            <img src="./images/block.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-text">ROCK</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
+                        <div id="paperBtn" class="card characterChoices" style="width: 13rem;">
+                            <img src="./images/block.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-text">PAPER</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
+                        <div id="scissorsBtn" class="card characterChoices" style="width: 13rem;">
+                            <img src="./images/block.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-text">SCISSORS</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
+                        <div id="lizardBtn" class="card characterChoices" style="width: 13rem;">
+                            <img src="./images/block.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-text">LIZARD</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
+                        <div id="spockBtn" class="card characterChoices" style="width: 13rem;">
+                            <img src="./images/block.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-text">SPOCK</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row px-3 pt-3">
+                    <button id="confirmBtn" type="button" class="btn btn-info">CONFIRM</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row px-3 pt-3">
+        <button id="cpuBtn" type="button" class="d-none btn btn-info">COMPUTER READY! SEE WHO WON</button>
+    </div>
+
+    <!-- <div class="row mt-5">
+        <div class="col">
+            <h1>PLAYER 2, READY?</h1>
+            <div class="div mt-3">
+                <div class="row px-3">
+                    <button id="selectChar2Btn" type="button" class="btn btn-info">SELECT CHARACTER</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="resultPane" class="row mt-5 d-none">
+        <div class="col">
+            <div class="row">
+                <h1>RESULTS</h1>
+                <p id="roundWinner">Player X Wins this Round!</p>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="row"><p>P1</p></div>
+                    <div class="row"><h3 id="p1Points">01</h3></div>
+                </div>
+                <div class="col-6">
+                    <div class="row"><p>P2</p></div>
+                    <div class="row"><h3 id="p2Points">01</h3></div>
+                </div>
+                <h2 id="declareWin" class="col-12">
+
+                </h2>
+            </div>
+
+            <div class="div mt-3">
+                <div class="row px-3">
+                    <button id="contBtn" type="button" class="btn btn-info">NEXT ROUND</button>
+
+                    <button id="refreshBtn" type="button" class="btn btn-info  d-none">BACK TO MAIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
-    </body>
+</body>
 
-    <script src="./js/script.js"></script>
+<script type="module" src="./js/script.js"></script>
 
 </html>
