@@ -2,15 +2,16 @@ let charactersSelected = [];
 let rounds = 0;
 let points = 0;
 
-let player1pts = 0;
-let player2pts = 0;
+let player1pts;
+let player2pts;
 
 let p1Points = document.getElementById("p1Points");
 let p2Points = document.getElementById("p2Points");
 let roundWinner = document.getElementById("roundWinner");
 
+let cpuBtn = document.getElementById("cpuBtn");
+
 function getWinner(array, numRounds, thresh, playerName) {
-//   console.log(array);
   let p1 = array[0];
   let p2 = array[1];
 
@@ -31,120 +32,136 @@ function getWinner(array, numRounds, thresh, playerName) {
       player2pts++;
       roundWinner.innerText = `${playerName} wins the round! ${p2} beats ${p1}`;
     }
-
-    numRounds--;
+    roundsLeft--;
+    // return numRounds;
   }
   p1Points.innerText = player1pts;
   p2Points.innerText = player2pts;
-
   checkRoundsLeft(numRounds, player1pts, player2pts, thresh, playerName);
 }
 
 let roundsToPlay = 0;
 
-function checkRoundsLeft(numRounds, p1Points, p2Points, winningPoints, user) {
+function checkRoundsLeft(numRoundsIn, p1Points, p2Points, winningPoints, user) {
   if (
-    numRounds > 0 &&
-    (p1Points !== winningPoints || p2Points !== winningPoints)
+    p1Points === winningPoints ||
+    p2Points === winningPoints ||
+    numRoundsIn === 0
   ) {
-    resultPane.classList.remove("d-none");
-  } else {
+    //ends game and shows results
     if (p1Points > p2Points) {
-      declareWin.innerText = "Player 1 Wins!";
+      declareWin.innerText = "Player 1 Wins it ALL!";
     } else {
-      declareWin.innerText = `${user} Wins!`;
+      declareWin.innerText = `${user} Wins it ALL!`;
     }
-
     resultPane.classList.remove("d-none");
+    //hide continue button
     contBtn.classList.add("d-none");
+    //show return to menu
     refreshBtn.classList.remove("d-none");
+  } else {
+    resultPane.classList.remove("d-none");
   }
 }
 
+let roundsLeft;
+let cpuChoice;
+
+let AIChoiceURL = "https://csa2020studentapi.azurewebsites.net/rpsls";
+
 function gamePlay(real, rounds, points, playerName) {
-  let selectCharBtn = document.getElementById("selectCharBtn");
-  let rockBtn = document.getElementById("rockBtn");
-  let paperBtn = document.getElementById("paperBtn");
-  let scissorsBtn = document.getElementById("scissorsBtn");
-  let lizardBtn = document.getElementById("lizardBtn");
-  let spockBtn = document.getElementById("spockBtn");
+  player1pts = 0;
+  player2pts = 0;
+
+  async function getAIChoice(url) {
+    let choice = await fetch(url);
+    let choice2 = await choice.text();
+    cpuChoice = choice2;
+  }
+
+  getAIChoice(AIChoiceURL);
+
+  roundsLeft = rounds;
 
   let confirmBtn = document.getElementById("confirmBtn");
   let contBtn = document.getElementById("contBtn");
 
-  let character = "";
+  let character;
 
-  selectCharBtn.addEventListener("click", function () {
-    readyPane.classList.add("d-none");
-    choicePane.classList.remove("d-none");
-  });
+  function pushName() {
+    charactersSelected.push(character);
+    choicePane.classList.add("d-none");
+  }
+
+  let selectCharBtn = document
+    .getElementById("selectCharBtn")
+    .addEventListener("click", function () {
+      readyPane.classList.add("d-none");
+      choicePane.classList.remove("d-none");
+    });
 
   //CHARACTER SELECTION
-  rockBtn.addEventListener("click", function () {
-    character = "rock";
-  });
-  paperBtn.addEventListener("click", function () {
-    character = "paper";
-  });
-  scissorsBtn.addEventListener("click", function () {
-    character = "scissors";
-  });
-  lizardBtn.addEventListener("click", function () {
-    character = "lizard";
-  });
-  spockBtn.addEventListener("click", function () {
-    character = "spock";
-  });
+  let rockBtn = document
+    .getElementById("rockBtn")
+    .addEventListener("click", function () {
+      character = "rock";
+    });
+  let paperBtn = document
+    .getElementById("paperBtn")
+    .addEventListener("click", function () {
+      character = "paper";
+    });
+  let scissorsBtn = document
+    .getElementById("scissorsBtn")
+    .addEventListener("click", function () {
+      character = "scissors";
+    });
+  let lizardBtn = document
+    .getElementById("lizardBtn")
+    .addEventListener("click", function () {
+      character = "lizard";
+    });
+  let spockBtn = document
+    .getElementById("spockBtn")
+    .addEventListener("click", function () {
+      character = "spock";
+    });
 
   confirmBtn.addEventListener("click", function () {
     if (real) {
       if (!character) {
+        alert("select a character first!");
       } else if (charactersSelected.length === 0) {
-        charactersSelected.push(character);
+        pushName();
 
-        choicePane.classList.add("d-none");
         readyPane.classList.remove("d-none");
         let pNum = (document.getElementById("pNum").innerText = "2");
       } else {
-        charactersSelected.push(character);
-
-        choicePane.classList.add("d-none");
+        pushName();
         //then run comparison
-        getWinner(charactersSelected, rounds, points, playerName);
+        getWinner(charactersSelected, roundsLeft, points, playerName);
       }
 
       character = "";
     } else {
-      let cpuBtn = document.getElementById("cpuBtn");
-
       if (!character) {
+        alert("select a character first!");
       } else if (charactersSelected.length === 0) {
-        charactersSelected.push(character);
+        pushName();
 
         cpuBtn.classList.remove("d-none");
-        choicePane.classList.add("d-none");
         confirmBtn.classList.add("d-none");
 
-        cpuBtn.addEventListener("click", function () {
-          let AIChoiceURL = "https://csa2020studentapi.azurewebsites.net/rpsls";
+        character = cpuChoice.toLowerCase();
+        // character = 'rock'; to test single variable
+        pushName();
+        confirmBtn.classList.remove("d-none");
+        getWinner(charactersSelected, roundsLeft, points, playerName);
+        cpuBtn.classList.add("d-none");
+        charactersSelected = [];
 
-          async function getAIChoice(url) {
-            let choice = await fetch(url);
-            let choice2 = await choice.text();
-
-            character = choice2;
-            charactersSelected.push(character);
-
-            choicePane.classList.add("d-none");
-            getWinner(charactersSelected, rounds, points, playerName);
-          }
-
-          getAIChoice(AIChoiceURL);
-          cpuBtn.classList.add("d-none");
-        });
-      } else {
+        // cpuBtn.addEventListener("click", function () {}); SHOULD YOU WANT TO USE A SEPARATE BUTTON <------
       }
-
       character = "";
     }
   });
