@@ -4,7 +4,6 @@ let charactersSelected = [];
 let rounds = 0;
 let points = 0;
 
-
 let player1pts = 0;
 let player2pts = 0;
 
@@ -13,7 +12,7 @@ let p2Points = document.getElementById("p2Points");
 let roundWinner = document.getElementById("roundWinner");
 
 //now we can write the funnction to compare the array...
-function getWinner(array, numRounds, thresh) {
+function getWinner(array, numRounds, thresh, playerName) {
   //pull in array
   //compare array[0] and array[1]
   let p1 = array[0];
@@ -39,7 +38,7 @@ function getWinner(array, numRounds, thresh) {
     } else {
       player2pts++;
     }
-    roundWinner.innerText = `Player 2 wins the round! ${p2} beats ${p1}`;
+    roundWinner.innerText = `${playerName} wins the round! ${p2} beats ${p1}`;
 
     numRounds--;
   }
@@ -49,7 +48,9 @@ function getWinner(array, numRounds, thresh) {
   p1Points.innerText = player1pts;
   p2Points.innerText = player2pts;
 
-  checkRoundsLeft(numRounds, player1pts, player2pts, thresh);
+console.log(playerName);
+
+  checkRoundsLeft(numRounds, player1pts, player2pts, thresh, playerName);
 }
 
 //this script handles rounds of play
@@ -57,7 +58,7 @@ let roundsToPlay = 0;
 
 //button click will determine rounds
 //this runs after results are displayed...
-function checkRoundsLeft(numRounds, p1Points, p2Points, winningPoints) {
+function checkRoundsLeft(numRounds, p1Points, p2Points, winningPoints, user) {
   console.log(winningPoints);
 
   if (
@@ -72,7 +73,7 @@ function checkRoundsLeft(numRounds, p1Points, p2Points, winningPoints) {
     if (p1Points > p2Points) {
       declareWin.innerText = "Player 1 Wins!";
     } else {
-      declareWin.innerText = "Player 2 Wins!";
+      declareWin.innerText = `${user} Wins!`;
     }
 
     resultPane.classList.remove("d-none");
@@ -93,7 +94,9 @@ function checkRoundsLeft(numRounds, p1Points, p2Points, winningPoints) {
 
 // only what's needed // for actual gameplay
 
-function gamePlay(type, rounds, points) {
+function gamePlay(real, rounds, points, playerName) {
+
+    console.log(playerName);
   let selectCharBtn = document.getElementById("selectCharBtn");
   let rockBtn = document.getElementById("rockBtn");
   let paperBtn = document.getElementById("paperBtn");
@@ -105,8 +108,7 @@ function gamePlay(type, rounds, points) {
   // let selectChar2Btn = document.getElementById("selectChar2Btn");
   let contBtn = document.getElementById("contBtn");
 
-  console.log(typeof type);
-
+  console.log(real);
 
   let character = "";
 
@@ -140,35 +142,80 @@ function gamePlay(type, rounds, points) {
     character = "spock";
   });
 
+  //this acts fro both 1 and 2, so we need two paths for cpu mode and live
   confirmBtn.addEventListener("click", function () {
-    console.log(`${character} confirmed!`);
-    // function that will push choice to array:
-    // private function
-    if (!character) {
-      console.log("Uh oh, choose please.");
-    } else if (charactersSelected.length === 0) {
-      charactersSelected.push(character);
-      console.log(charactersSelected);
-      choicePane.classList.add("d-none");
-      readyPane.classList.remove("d-none");
-      let pNum = (document.getElementById("pNum").innerText = "2");
+    if (real) {
+      console.log(`${character} confirmed!`);
+      // function that will push choice to array:
+      // private function
+      if (!character) {
+        console.log("Uh oh, choose please.");
+      } else if (charactersSelected.length === 0) {
+        charactersSelected.push(character);
+        console.log(charactersSelected);
+        choicePane.classList.add("d-none");
+        readyPane.classList.remove("d-none");
+        let pNum = (document.getElementById("pNum").innerText = "2");
+      } else {
+        // console.log('Uh oh, you already chose...');
+        charactersSelected.push(character);
+        console.log(`time to compare: ${charactersSelected}`);
+        choicePane.classList.add("d-none");
+        //then run comparison
+        getWinner(charactersSelected, rounds, points, playerName);
+      }
+
+      character = "";
     } else {
-      // console.log('Uh oh, you already chose...');
-      charactersSelected.push(character);
-      console.log(`time to compare: ${charactersSelected}`);
-      choicePane.classList.add("d-none");
-      //then run comparison
-      getWinner(charactersSelected, rounds, points);
-    }
+      let cpuBtn = document.getElementById("cpuBtn");
 
-    character = "";
+      //handle CPU mode
+      console.log(`${character} confirmed!`);
+      // function that will push choice to array:
+      // private function
+      if (!character) {
+        console.log("Uh oh, choose please.");
+      } else if (charactersSelected.length === 0) {
+        charactersSelected.push(character);
+        console.log(charactersSelected);
+        //   choicePane.classList.add("d-none");
+        //   readyPane.classList.remove("d-none");
+        //   let pNum = (document.getElementById("pNum").innerText = "2");
+        //we need to show the comp ready button...
+        cpuBtn.classList.remove("d-none");
+        confirmBtn.classList.add("d-none");
 
-    function pushChar(character) {
-      //grab character
+        cpuBtn.addEventListener("click", function () {
+          //cpu choice api call, maybe handle that earlier?
+          let AIChoiceURL = "https://csa2020studentapi.azurewebsites.net/rpsls";
+
+          async function getAIChoice(url) {
+            let choice = await fetch(url);
+            // console.log(typeof choice);
+            let choice2 = await choice.text();
+            console.log(`Shhhh...API Choice: ${choice2}`);
+            character = choice2;
+            charactersSelected.push(character);
+
+            //   charactersSelected.push(character);
+            console.log(`time to compare: ${charactersSelected}`);
+            choicePane.classList.add("d-none");
+            //then run comparison
+            getWinner(charactersSelected, rounds, points, playerName);
+          }
+
+          getAIChoice(AIChoiceURL);
+          cpuBtn.classList.add("d-none");
+
+        });
+      } else {
+      }
+
+      character = "";
     }
   });
   // selectChar2Btn.addEventListener("click", function () {
-  //   console.log("Choose wisely Player 2...");
+  //   console.log("Choose wisely ${playerName}...");
   // });
   contBtn.addEventListener("click", function () {
     console.log("ELMO");
@@ -180,7 +227,7 @@ function gamePlay(type, rounds, points) {
     console.log(charactersSelected);
   });
 
-//   let characters = ["ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK"];
+  //   let characters = ["ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK"];
 }
 
 export { getWinner, gamePlay };

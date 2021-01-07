@@ -3,6 +3,7 @@ import * as winner from './getWinner.js';
 let gameTypeSelected;
 let roundsSelected = 0;
 let ptsToWin = 0;
+let opponent = 'No One';
 
 let realPlayer;
 
@@ -38,11 +39,13 @@ let loadPage = () => {
     console.log("CPU Challenege Accepted!");
     gameTypeSelected = cpuGamePlay;
     realPlayer = false; //set game type
+    opponent = "CPU";
   });
   player2Btn.addEventListener("click", function () {
     console.log("Real Human Interaction #covid");
     gameTypeSelected = twoGamePlay;
     realPlayer = true;
+    opponent = "Player 2";
   });
 
   // GAMES
@@ -74,7 +77,7 @@ let loadPage = () => {
       startGame(gameTypeSelected, roundsSelected, ptsToWin);
       hideOptions();
       readyPane.classList.remove("d-none");
-      winner.gamePlay(realPlayer, roundsSelected, ptsToWin);
+      winner.gamePlay(realPlayer, roundsSelected, ptsToWin, opponent);
     }
   });
 
