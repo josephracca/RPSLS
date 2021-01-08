@@ -10,39 +10,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
-    <link rel="stylesheet" href="./css/styleLight.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- <link rel="stylesheet" href="./css/styleLight.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/wickedcss.min.css">
     <title>Big Banger</title>
+    <link rel="shortcut icon" href="./images/galaxy.jpg" />
 </head>
 
-<body>
+<body id="bodyOdyOdy">
 
     <div id="allTheHands" class="container limit d-none">
-        <img src="./images/Lrock.svg" id="rockBtn" type="button" class="zToBack scaler bounceIn" alt="Rock"
-            style="position: absolute; top: -15%; left: -200px;">
-        <img src="./images/Lpaper.svg" id="paperBtn" type="button" class="zToBack scaler bounceIn" alt="Rock"
-            style="position: absolute; top: 14%; left: -17%;">
-        <img src="./images/Lscissors.svg" id="scissorsBtn" type="button" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Lrock.svg" id="rockBtn" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
+            style="position: absolute; top: -150px; left: -150px;">
+        <img src="./images/Lpaper.svg" id="paperBtn" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
+            style="position: absolute; top: 110px; left: -250px;">
+        <img src="./images/Lscissors.svg" id="scissorsBtn" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
             style="position: absolute; top: 400px; left: -200px;">
-        <img src="./images/Llizard.svg" id="lizardBtn" type="button" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Llizard.svg" id="lizardBtn" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
             style="position: absolute; top: 530px; left: -180px;">
-        <img src="./images/Lspock.svg" id="spockBtn" type="button" class="zToBack scaler bounceIn" alt="Rock"
-            style="position: absolute; top: 670px; left: -240px;">
+        <img src="./images/Lspock.svg" id="spockBtn" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
+            style="position: absolute; top: 690px; left: -260px;">
 
-        <img src="./images/Rrock.svg" id="rockBtn2" type="button" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rrock.svg" id="rockBtn2" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
             style="position: absolute; top: -15%; right: -200px;">
-        <img src="./images/Rpaper.svg" id="paperBtn2" type="button" class="zToBack scaler bounceIn" alt="Rock"
-            style="position: absolute; top: 14%; right: -17%;">
-        <img src="./images/Rscissors.svg" id="scissorsBtn2" type="button" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rpaper.svg" id="paperBtn2" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
+            style="position: absolute; top: 110px; right: -250px;">
+        <img src="./images/Rscissors.svg" id="scissorsBtn2" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
             style="position: absolute; top: 420px; right: -200px;">
-        <img src="./images/Rlizard.svg" id="lizardBtn2" type="button" class="zToBack scaler bounceIn" alt="Rock"
-            style="position: absolute; top: 550px; right: -180px;">
-        <img src="./images/Rspock.svg" id="spockBtn2" type="button" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rlizard.svg" id="lizardBtn2" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
+            style="position: absolute; top: 550px; right: -150px;">
+        <img src="./images/Rspock.svg" id="spockBtn2" type="button" disabled class="zToBack scaler bounceIn" alt="Rock"
             style="position: absolute; top: 690px; right: -240px;">
     </div>
 
@@ -61,8 +62,8 @@
                 <h1 id="gameName" class="massive rotateIn">
                     <span id="rspls">RPSLS</span>
                     <span id="pride">
-                        <img src="./images/rpslsBW.png" alt="Who beats who int he game..."style="width: 100%">
-                        <!-- <i class="fas fa-hand-rock"></i><i class="fas fa-hand-paper"></i><i class="fas fa-hand-scissors"></i><i class="fas fa-hand-lizard"></i><i class="fas fa-hand-spock"></i> -->
+                        <!-- <img src="./images/rpslsBW.png" alt="Who beats who int he game..."style="width: 100%"> -->
+                        <i class="fas fa-hand-rock"></i><i class="fas fa-hand-paper"></i><i class="fas fa-hand-scissors"></i><i class="fas fa-hand-lizard"></i><i class="fas fa-hand-spock"></i>
                     </span>
                 </h1>
             </div>
@@ -85,7 +86,7 @@
                     <div id="options2" class="btn-group mt-3" role="group2"
                         aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio" id="quick1Btn" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="quick1Btn">quik1e</label>
+                        <label class="btn btn-outline-primary" for="quick1Btn">quikee</label>
 
                         <input type="radio" class="btn-check" name="btnradio" id="bestOf5Btn" autocomplete="off">
                         <label class="btn btn-outline-primary" for="bestOf5Btn">bestOf5</label>
@@ -103,7 +104,7 @@
 
                     <div class="div mt-3">
                         <div class="row px-3">
-                            <button id="startGameBtn" type="button" class="btn btn-dark btn-font disabled">START</button>
+                            <button id="startGameBtn" type="button" class="btn btn-info btn-font disabled">START</button>
 
                             <div class="col">
                             </div>
@@ -124,7 +125,7 @@
                 <h1>PLAYER <span id="pNum">1</span>, READY?</h1>
                 <div class="div mt-3">
                     <div class="row px-3">
-                        <button id="selectCharBtn" type="button" class="btn btn-dark btn-font">I'M READY!</button>
+                        <button id="selectCharBtn" type="button" class="btn btn-info btn-font">I'M READY!</button>
                     </div>
                 </div>
             </div>
@@ -183,7 +184,7 @@
                 </div>
                 <div class="row px-3 pt-3 d-flex justify-content-around">
                     <div class="col">
-                        <button id="confirmBtn" type="button" class="d-none btn btn-dark btn-font">CONFIRM</button>
+                        <button id="confirmBtn" type="button" class="d-none btn btn-info btn-font">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -194,7 +195,7 @@
     <div class="container  text-center limit">
 
         <div class="row px-3 pt-3">
-            <button id="cpuBtn" type="button" class="d-none btn btn-dark btn-font">COMPUTER READY! SEE WHO WON</button>
+            <button id="cpuBtn" type="button" class="d-none btn btn-info btn-font">COMPUTER READY! SEE WHO WON</button>
         </div>
 
         <!-- <div class="row mt-5">
@@ -202,7 +203,7 @@
             <h1>PLAYER 2, READY?</h1>
             <div class="div mt-3">
                 <div class="row px-3">
-                    <button id="selectChar2Btn" type="button" class="btn btn-dark btn-font">SELECT CHARACTER</button>
+                    <button id="selectChar2Btn" type="button" class="btn btn-info btn-font">SELECT CHARACTER</button>
                 </div>
             </div>
         </div>
@@ -239,26 +240,35 @@
 
                 <div class="div mt-3">
                     <div class="row px-3">
-                        <button id="contBtn" type="button" class="btn btn-dark btn-font">NEXT ROUND</button>
+                        <button id="contBtn" type="button" class="btn btn-info btn-font">NEXT ROUND</button>
 
-                        <button id="refreshBtn" type="button" class="btn btn-dark btn-font  d-none">BACK TO MAIN</button>
+                        <button id="refreshBtn" type="button" class="btn btn-info btn-font  d-none">BACK TO MAIN</button>
                     </div>
                 </div>
             </div>
             
         </div>
-        <p id="credits" class="slideUp pt-5 shake">HAND CRAFTED BY JOSEPH RACCA</p>
+        <div id="credits" class="slideUp pt-5 shake">
+            <div class="row">
+                <div class="col center">
+                    <p>JOSEPH<a href="https://www.instagram.com/jracca/" target="_blank"><img
+                                src="./images/jrLogoWhite.svg" style="width: 50px;" class="logo pl-1 mx-2"
+                                alt="Joseph Racca's Logo"></a>RACCA</p>
+                </div>
+            </div>
+        </div>
+        
 
 
-        <figure>
+        <figure style="opacity: 10%; padding-top: 200px;">
         
             <audio
                 controls
-                src="./audio/final.mp3" autoplay>
+                src="./audio/final.mp3" autoplay">
                     Your browser does not support the
                     <code>audio</code> element.
             </audio>
-            <figcaption><p style="font-size:10px;">courtesy <a href="https://www.youtube.com/watch?v=0iIQ_y6Bv7k">StephenSeymourMusic</a></p></figcaption>
+            <figcaption><p style="font-size:10px;">music by <a href="https://www.youtube.com/watch?v=0iIQ_y6Bv7k">StephenSeymourMusic</a></p></figcaption>
         </figure>
     </div>
 

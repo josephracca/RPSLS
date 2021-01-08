@@ -25,6 +25,8 @@ let rounds = document.getElementById("rounds");
 
 let allTheHands = document.getElementById("allTheHands");
 
+let bodyOdyOdy = document.getElementById("bodyOdyOdy");
+
 let loadPage = () => {
 refreshBtn.addEventListener("click", function () {
     showOptions();
@@ -35,6 +37,7 @@ refreshBtn.addEventListener("click", function () {
     realPlayer = false;
     opponent = "CPU";
     mode.innerText = "A ROBOT";
+    nameSpace2.innerText = "THE ROBOT";
     checkAgain();
   });
   let player2Btn = document.getElementById("player2Btn").addEventListener("click", function () {
@@ -43,6 +46,7 @@ refreshBtn.addEventListener("click", function () {
     opponent = "Player 2";
     mode.innerText = "A NON-ROBOT";
     checkAgain();
+    nameSpace2.innerText = "PLAYER 2";
   });
 
   let quick1Btn = document.getElementById("quick1Btn").addEventListener("click", function () {

@@ -1,11 +1,19 @@
 body{
-    /* background-color: #21334E; */
-    color:  #21334E;
+
+    color:  white;
     /* font-family: 'Major Mono Display', monospace;
     
  */
  font-family: 'Chewy', cursive;
  letter-spacing: 2px;
+}
+
+.explosion{
+    background-color: #cecece;
+    background-image: url('../images/original.gif');
+    background-size: cover;
+    /* background-size: 150%; */
+    /* background-position: center; */
 }
 
 /* //let's target the button effects */

@@ -1,10 +1,22 @@
 body{
-    background-color: #21334E;
+    background-color: #1a1a1a;
     color: white;
-    font-family: 'Major Mono Display', monospace;
+    /* font-family: 'Major Mono Display', monospace; */
+    font-family: 'Chewy', cursive;
+    letter-spacing: .2rem;
+
+
 }
 
 /* //let's target the button effects */
+
+.explosion{
+    background-color: #cecece;
+    background-image: url('../images/original.gif');
+    background-size: cover;
+    /* background-size: 150%; */
+    /* background-position: center; */
+}
 
 .btn-outline-primary {
     color: white;
@@ -30,6 +42,10 @@ body{
 
 .btn{
 border-radius: 2rem;;
+}
+
+.btn-font{
+    font-size: 30px;
 }
 
 h1{
@@ -63,5 +79,34 @@ h1{
 }
 
 .darkBlue{
-    color: #141f30;
+    color: #e7e7e7;
+}
+
+
+
+h1#gameName span#rspls{
+    display: inline;
+}
+
+h1#gameName:hover span#rspls{
+    display: none;
+}
+
+h1#gameName span#pride{
+    display: none;
+}
+
+h1#gameName:hover span#pride{
+    display: inline;
+}
+
+#pride{
+    letter-spacing: 10px;
+    font-size: 60px!important;
+}
+
+
+a {
+    color: #fdd90d;
+    text-decoration: none
 }

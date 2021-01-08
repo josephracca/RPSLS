@@ -56,11 +56,15 @@ function checkRoundsLeft(numRoundsIn, p1Points, p2Points, winningPoints, user) {
     } else {
       declareWin.innerText = `${user} Wins it ALL!`;
     }
+
+    bodyOdyOdy.classList.add("explosion");
+
     resultPane.classList.remove("d-none");
     //hide continue button
     contBtn.classList.add("d-none");
     //show return to menu
     refreshBtn.classList.remove("d-none");
+    fadeAll();
   } else {
     resultPane.classList.remove("d-none");
   }
@@ -110,18 +114,20 @@ function gamePlay(real, rounds, points, playerName) {
 
   let rockBtn = document.getElementById("rockBtn");
 
-    function stopAll(){
-      rockBtn.classList.remove("wiggle");
-      paperBtn.classList.remove("wiggle");
-      scissorsBtn.classList.remove("wiggle");
-      lizardBtn.classList.remove("wiggle");
-      spockBtn.classList.remove("wiggle");
-      rockBtn2.classList.remove("wiggle");
-      paperBtn2.classList.remove("wiggle");
-      scissorsBtn2.classList.remove("wiggle");
-      lizardBtn2.classList.remove("wiggle");
-      spockBtn2.classList.remove("wiggle");
+  function stopAll() {
+    rockBtn.classList.remove("wiggle");
+    paperBtn.classList.remove("wiggle");
+    scissorsBtn.classList.remove("wiggle");
+    lizardBtn.classList.remove("wiggle");
+    spockBtn.classList.remove("wiggle");
+    rockBtn2.classList.remove("wiggle");
+    paperBtn2.classList.remove("wiggle");
+    scissorsBtn2.classList.remove("wiggle");
+    lizardBtn2.classList.remove("wiggle");
+    spockBtn2.classList.remove("wiggle");
   }
+
+
 
   rockBtn.addEventListener("click", function () {
     // stopAll();
@@ -233,5 +239,18 @@ function gamePlay(real, rounds, points, playerName) {
     stopAll();
   });
 }
+
+// function fadeAll() {
+//   rockBtn.classList.add("fadeOut");
+//   paperBtn.classList.add("fadeOut");
+//   scissorsBtn.classList.add("fadeOut");
+//   lizardBtn.classList.add("fadeOut");
+//   spockBtn.classList.add("fadeOut");
+//   rockBtn2.classList.add("fadeOut");
+//   paperBtn2.classList.add("fadeOut");
+//   scissorsBtn2.classList.add("fadeOut");
+//   lizardBtn2.classList.add("fadeOut");
+//   spockBtn2.classList.add("fadeOut");
+// }
 
 export { getWinner, gamePlay };
