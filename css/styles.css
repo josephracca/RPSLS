@@ -1,21 +1,14 @@
-body{
+body {
     background-color: #1a1a1a;
     color: white;
-    /* font-family: 'Major Mono Display', monospace; */
     font-family: 'Chewy', cursive;
     letter-spacing: .2rem;
-
-
 }
 
-/* //let's target the button effects */
-
-.explosion{
+.explosion {
     background-color: #cecece;
     background-image: url('../images/original.gif');
     background-size: cover;
-    /* background-size: 150%; */
-    /* background-position: center; */
 }
 
 .btn-outline-primary {
@@ -36,85 +29,83 @@ body{
     border-color: #f9fd0d
 }
 
-.yellow{
-    color:#f9fd0d;
+.yellow {
+    color: #f9fd0d;
 }
 
-.btn{
-border-radius: 2rem;;
+.btn {
+    border-radius: 2rem;
 }
 
-.btn-font{
+.btn-font {
     font-size: 30px;
 }
 
-h1{
-    font-family: 'Major Mono Display', monospace;    font-size: 50px;
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 50px;
     text-align: center;
 }
 
-.massive{
+.massive {
     font-size: 100px;
 }
 
-.lessMassive{
+.lessMassive {
     font-size: 75px;
 }
 
-.limit{
+.limit {
     max-width: 400px
 }
 
 .characterChoices {
-    color:#21334E;
+    color: #21334E;
 }
 
-.zToBack{
+.zToBack {
     /* z-index: -1000; */
     position: absolute;
 }
 
-.scaler{
- width: 45%;
+.scaler {
+    width: 45%;
 }
 
-.opacity{
+.opacity {
     opacity: 15%;
 }
 
-.darkBlue{
+.darkBlue {
     color: #e7e7e7;
 }
 
-
-
-h1#gameName span#rspls{
+h1#gameName span#rspls {
     display: inline;
 }
 
-h1#gameName:hover span#rspls{
+h1#gameName:hover span#rspls {
     display: none;
 }
 
-h1#gameName span#pride{
+h1#gameName span#pride {
     display: none;
 }
 
-h1#gameName:hover span#pride{
+h1#gameName:hover span#pride {
     display: inline;
 }
 
-#pride{
+#pride {
     letter-spacing: 10px;
     font-size: 60px!important;
 }
-
 
 a {
     color: #fdd90d;
     text-decoration: none
 }
 
-#exampleModalLabel{
+#exampleModalLabel {
     color: #1a1a1a;
 }

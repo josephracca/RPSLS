@@ -30,36 +30,29 @@
 <body id="bodyOdyOdy">
 
     <div id="allTheHands" class="container limit d-none">
-        <img src="./images/Lrock.svg" id="rockBtn" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Lrock.svg" id="rockBtn" class="zToBack scaler bounceIn" alt="Rock Selector"
             style="position: absolute; top: -150px; left: -150px;">
-        <img src="./images/Lpaper.svg" id="paperBtn" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Lpaper.svg" id="paperBtn" class="zToBack scaler bounceIn" alt="Paper Selector"
             style="position: absolute; top: 110px; left: -250px;">
-        <img src="./images/Lscissors.svg" id="scissorsBtn" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Lscissors.svg" id="scissorsBtn" class="zToBack scaler bounceIn" alt="Scissors Selector"
             style="position: absolute; top: 400px; left: -200px;">
-        <img src="./images/Llizard.svg" id="lizardBtn" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Llizard.svg" id="lizardBtn" class="zToBack scaler bounceIn" alt="Lizard Selector"
             style="position: absolute; top: 530px; left: -180px;">
-        <img src="./images/Lspock.svg" id="spockBtn" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Lspock.svg" id="spockBtn" class="zToBack scaler bounceIn" alt="Spock Selector"
             style="position: absolute; top: 690px; left: -260px;">
 
-        <img src="./images/Rrock.svg" id="rockBtn2" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rrock.svg" id="rockBtn2" class="zToBack scaler bounceIn" alt="Rock Selector"
             style="position: absolute; top: -15%; right: -200px;">
-        <img src="./images/Rpaper.svg" id="paperBtn2" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rpaper.svg" id="paperBtn2" class="zToBack scaler bounceIn" alt="Paper Selector"
             style="position: absolute; top: 110px; right: -250px;">
-        <img src="./images/Rscissors.svg" id="scissorsBtn2" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rscissors.svg" id="scissorsBtn2" class="zToBack scaler bounceIn" alt="Scissors Selector"
             style="position: absolute; top: 420px; right: -200px;">
-        <img src="./images/Rlizard.svg" id="lizardBtn2" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rlizard.svg" id="lizardBtn2" class="zToBack scaler bounceIn" alt="Lizard Selector"
             style="position: absolute; top: 550px; right: -150px;">
-        <img src="./images/Rspock.svg" id="spockBtn2" class="zToBack scaler bounceIn" alt="Rock"
+        <img src="./images/Rspock.svg" id="spockBtn2" class="zToBack scaler bounceIn" alt="Spock Selector"
             style="position: absolute; top: 690px; right: -240px;">
     </div>
 
-
-    <div class="container" style="position: -webkit-sticky; position: sticky; top:100px;">
-        <!-- <div class="row z-index">    
-            <svg xmlns="http://www.w3.org/2000/svg" width="719" height="414" viewBox="0 0 719 414"><defs><style>.a{fill:rgba(0,0,0,0.28);}</style></defs><rect class="a" width="719" height="414" rx="30"/></svg>
-        </div> -->
-
-    </div>
     <div class="container text-center limit fadeIn" style="margin-top: 200px;">
 
         <div class="row">
@@ -68,7 +61,6 @@
                 <h1 id="gameName" class="massive rotateIn">
                     <span id="rspls">RPSLS</span>
                     <span id="pride">
-                        <!-- <img src="./images/rpslsBW.png" alt="Who beats who int he game..."style="width: 100%"> -->
                         <i class="fas fa-hand-rock"></i><i class="fas fa-hand-paper"></i><i
                             class="fas fa-hand-scissors"></i><i class="fas fa-hand-lizard"></i><i
                             class="fas fa-hand-spock"></i>
@@ -101,7 +93,7 @@
                                     Theory</strong>.
                                 <br><br>
                                 <b>WHAT BEATS WHAT?</b><br>
-                                <img src="./images/rpslsBW.png" alt="Who beats who int he game..." style="width: 100%">
+                                <img src="./images/rpslsBW.png" alt="Who beats who in the game..." style="width: 100%">
                                 As always...a draw when both players choose the same. Have fun!
                             </div>
                             <div class="modal-footer">
@@ -128,7 +120,7 @@
                         <label class="btn btn-outline-primary" for="player2Btn">twoPlayer</label>
                     </div>
 
-                    <div id="options2" class="btn-group mt-3" role="group2"
+                    <div id="options2" class="btn-group mt-3" role="group"
                         aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio" id="quick1Btn" autocomplete="off">
                         <label class="btn btn-outline-primary" for="quick1Btn">quikee</label>
@@ -156,12 +148,7 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
-
-
             </div>
         </div>
 
@@ -182,33 +169,16 @@
                 <h2>choose wisely...</h2>
                 <h3 id="choice"></h3>
                 <div class="row px-3 pt-3">
-                        <button id="confirmBtn" type="button" class="d-none btn btn-info btn-font">CONFIRM</button>
+                    <button id="confirmBtn" type="button" class="d-none btn btn-info btn-font">CONFIRM</button>
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <div class="container limit text-center">
-        
     </div>
 
     <div class="container  text-center limit">
-
         <div class="row px-3 pt-3">
             <button id="cpuBtn" type="button" class="d-none btn btn-info btn-font">COMPUTER READY! SEE WHO WON</button>
         </div>
-
-        <!-- <div class="row mt-5">
-        <div class="col">
-            <h1>PLAYER 2, READY?</h1>
-            <div class="div mt-3">
-                <div class="row px-3">
-                    <button id="selectChar2Btn" type="button" class="btn btn-info btn-font">SELECT CHARACTER</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
         <div id="resultPane" class="row mt-5 d-none">
             <div class="col">
@@ -260,38 +230,29 @@
             </div>
         </div>
 
-
-
-        <figure style="opacity: 10%; padding-top: 200px;">
-
-            <audio controls src="./audio/final.mp3" autoplay">
-                Your browser does not support the
-                <code>audio</code> element.
-            </audio>
+        <!-- FOR AUDIO PLAYER -->
+        <figure style="padding-top: 200px;">
+            <span style="opacity: 10%;">
+                <figcaption>
+                    <p style="font-size:14px;"> <i class="fas fa-volume-up"></i> + auditory stimulus!</p>
+                </figcaption>
+                <audio controls src="./audio/final.mp3">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                </audio>
+            </span>
             <figcaption>
-                <p style="font-size:10px;">music by <a
+                <p style="font-size:10px;"><i class="fas fa-music"></i> by <a
                         href="https://www.youtube.com/watch?v=0iIQ_y6Bv7k">StephenSeymourMusic</a></p>
             </figcaption>
         </figure>
     </div>
 
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+    <script type="module" src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/484192cc2d.js" crossorigin="anonymous"></script>
 </body>
-
-<script type="module" src="./js/script.js"></script>
-<script src="https://kit.fontawesome.com/484192cc2d.js" crossorigin="anonymous"></script>
 
 </html>

@@ -14,8 +14,6 @@ let choicePane = document.getElementById("choicePane");
 let resultPane = document.getElementById("resultPane");
 let declareWin = document.getElementById("declareWin");
 
-// let charactersSelected = [];
-
 let p1Points = document.getElementById("p1Points");
 let p2Points = document.getElementById("p2Points");
 let roundWinner = document.getElementById("roundWinner");
@@ -72,23 +70,12 @@ refreshBtn.addEventListener("click", function () {
   let gameName = document.getElementById("gameName");
   let credits = document.getElementById("credits");
 
-  // startGameBtn.classList.remove("disabled");
-
-// console.log(!gameTypeSelected);
-// console.log(typeof roundsSelected === 'undefined');
-// console.log(roundsSelected);
-
   function checkAgain(){
-    // console.log(!gameTypeSelected || (typeof roundsSelected === 'undefined'));
     if (!gameTypeSelected || (typeof roundsSelected === 'undefined')) {
-      // alert('choose options to play');
-      // console.log(!gameTypeSelected || (typeof roundsSelected === 'undefined'));
           } else {
             startGameBtn.classList.remove("disabled");
-            // console.log(!gameTypeSelected || (typeof roundsSelected === 'undefined'));
           }
   }
-
   
   startGameBtn.addEventListener("click", function () {
     if (!gameTypeSelected || (typeof roundsSelected === 'undefined')) {
