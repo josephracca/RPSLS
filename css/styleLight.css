@@ -24,7 +24,7 @@ body{
 
 .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
     color: #21334E;
-    background-color: #1642635f;
+    background-color: #eeff00;
     border-color: #164263
 }
 
