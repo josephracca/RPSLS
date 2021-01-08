@@ -1,3 +1,9 @@
+<!-- 
+    Joseph Racca
+    RPSLS
+    01.08.20
+ -->
+
 <!doctype html>
 <html lang="en">
 
@@ -63,9 +69,48 @@
                     <span id="rspls">RPSLS</span>
                     <span id="pride">
                         <!-- <img src="./images/rpslsBW.png" alt="Who beats who int he game..."style="width: 100%"> -->
-                        <i class="fas fa-hand-rock"></i><i class="fas fa-hand-paper"></i><i class="fas fa-hand-scissors"></i><i class="fas fa-hand-lizard"></i><i class="fas fa-hand-spock"></i>
+                        <i class="fas fa-hand-rock"></i><i class="fas fa-hand-paper"></i><i
+                            class="fas fa-hand-scissors"></i><i class="fas fa-hand-lizard"></i><i
+                            class="fas fa-hand-spock"></i>
                     </span>
                 </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i>?&nbsp;</i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Rock, Paper, Scissors, Lizard, Spock!
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body"
+                                style="color: #1a1a1a; text-align: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: .5px;">
+                                That's the name of the game, as popularized by the show, <strong>The Big Bang
+                                    Theory</strong>.
+                                <br><br>
+                                <b>WHAT BEATS WHAT?</b><br>
+                                <img src="./images/rpslsBW.png" alt="Who beats who int he game..." style="width: 100%">
+                                Always a draw if both players choose the same.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Get outta here and
+                                    start playing!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -104,7 +149,8 @@
 
                     <div class="div mt-3">
                         <div class="row px-3">
-                            <button id="startGameBtn" type="button" class="btn btn-info btn-font disabled">START</button>
+                            <button id="startGameBtn" type="button"
+                                class="btn btn-info btn-font disabled">START</button>
 
                             <div class="col">
                             </div>
@@ -131,65 +177,20 @@
             </div>
         </div>
 
-    </div>
-
-    <div class="container text-center">
         <div id="choicePane" class="row mt-3 d-none">
             <div class="col" style="padding-top: 50px;">
                 <h2>choose wisely...</h2>
                 <h3 id="choice"></h3>
-                <!-- <div class="div mt-3">
-                    <!-- 121 holds that -->
-                <div class="row d-none">
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="rockBtn" type="button" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">ROCK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="paperBtn" type="button" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">PAPER</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="scissorsBtn" type="button" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">SCISSORS</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="lizardBtn" type="button" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">LIZARD</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="spockBtn" type="button" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">SPOCK</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row px-3 pt-3 d-flex justify-content-around">
-                    <div class="col">
+                <div class="row px-3 pt-3">
                         <button id="confirmBtn" type="button" class="d-none btn btn-info btn-font">CONFIRM</button>
-                    </div>
                 </div>
             </div>
         </div>
+
     </div>
+
+    <div class="container limit text-center">
+        
     </div>
 
     <div class="container  text-center limit">
@@ -215,7 +216,7 @@
                     <h1>RESULTS</h1>
                     <p id="roundWinner" class="yellow">Player X Wins this Round!</p>
                 </div>
-<hr>
+                <hr>
                 <div class="row">
                     <div class="col-6">
                         <div class="row">
@@ -242,11 +243,12 @@
                     <div class="row px-3">
                         <button id="contBtn" type="button" class="btn btn-info btn-font">NEXT ROUND</button>
 
-                        <button id="refreshBtn" type="button" class="btn btn-info btn-font  d-none">BACK TO MAIN</button>
+                        <button id="refreshBtn" type="button" class="btn btn-info btn-font  d-none">BACK TO
+                            MAIN</button>
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div id="credits" class="slideUp pt-5 shake">
             <div class="row">
@@ -257,18 +259,19 @@
                 </div>
             </div>
         </div>
-        
+
 
 
         <figure style="opacity: 10%; padding-top: 200px;">
-        
-            <audio
-                controls
-                src="./audio/final.mp3" autoplay">
-                    Your browser does not support the
-                    <code>audio</code> element.
+
+            <audio controls src="./audio/final.mp3" autoplay">
+                Your browser does not support the
+                <code>audio</code> element.
             </audio>
-            <figcaption><p style="font-size:10px;">music by <a href="https://www.youtube.com/watch?v=0iIQ_y6Bv7k">StephenSeymourMusic</a></p></figcaption>
+            <figcaption>
+                <p style="font-size:10px;">music by <a
+                        href="https://www.youtube.com/watch?v=0iIQ_y6Bv7k">StephenSeymourMusic</a></p>
+            </figcaption>
         </figure>
     </div>
 

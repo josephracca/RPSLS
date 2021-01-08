@@ -58,13 +58,13 @@ refreshBtn.addEventListener("click", function () {
   let bestOf5Btn = document.getElementById("bestOf5Btn").addEventListener("click", function () {
     roundsSelected = 5;
     ptsToWin = 3;
-    rounds.innerText = "THREE";
+    rounds.innerText = "THR33";
     checkAgain();
   });
   let bestOf7Btn = document.getElementById("bestOf7Btn").addEventListener("click", function () {
     roundsSelected = 7;
     ptsToWin = 4;
-    rounds.innerText = "FIVE";
+    rounds.innerText = "5IVE";
     checkAgain();
   });
 

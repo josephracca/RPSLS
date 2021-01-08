@@ -106,7 +106,24 @@ function gamePlay(real, rounds, points, playerName) {
       choicePane.classList.remove("d-none");
       // rockBtn.classList.remove("disabled");
       confirmBtn.classList.add("d-none");
+      removeBounceIn();
+      stopAll();
       //disable and turn opacity down
+
+//remove slide from classlist
+function removeBounceIn(){
+  rockBtn.classList.remove("bounceIn");
+  paperBtn.classList.remove("bounceIn");
+  scissorsBtn.classList.remove("bounceIn");
+  lizardBtn.classList.remove("bounceIn");
+  spockBtn.classList.remove("bounceIn");
+  rockBtn2.classList.remove("bounceIn");
+  paperBtn2.classList.remove("bounceIn");
+  scissorsBtn2.classList.remove("bounceIn");
+  lizardBtn2.classList.remove("bounceIn");
+  spockBtn2.classList.remove("bounceIn");
+}
+
     });
 
   //CHARACTER SELECTION
@@ -192,6 +209,8 @@ function gamePlay(real, rounds, points, playerName) {
   });
 
   confirmBtn.addEventListener("click", function () {
+
+    stopAll();
     if (real) {
       if (!character) {
         alert("select a character first!");
