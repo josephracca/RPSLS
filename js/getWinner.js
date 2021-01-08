@@ -102,6 +102,7 @@ function gamePlay(real, rounds, points, playerName) {
   let selectCharBtn = document
     .getElementById("selectCharBtn")
     .addEventListener("click", function () {
+      getAIChoice(AIChoiceURL);
       readyPane.classList.add("d-none");
       choicePane.classList.remove("d-none");
       // rockBtn.classList.remove("disabled");
@@ -110,20 +111,19 @@ function gamePlay(real, rounds, points, playerName) {
       stopAll();
       //disable and turn opacity down
 
-//remove slide from classlist
-function removeBounceIn(){
-  rockBtn.classList.remove("bounceIn");
-  paperBtn.classList.remove("bounceIn");
-  scissorsBtn.classList.remove("bounceIn");
-  lizardBtn.classList.remove("bounceIn");
-  spockBtn.classList.remove("bounceIn");
-  rockBtn2.classList.remove("bounceIn");
-  paperBtn2.classList.remove("bounceIn");
-  scissorsBtn2.classList.remove("bounceIn");
-  lizardBtn2.classList.remove("bounceIn");
-  spockBtn2.classList.remove("bounceIn");
-}
-
+      //remove slide from classlist
+      function removeBounceIn() {
+        rockBtn.classList.remove("bounceIn");
+        paperBtn.classList.remove("bounceIn");
+        scissorsBtn.classList.remove("bounceIn");
+        lizardBtn.classList.remove("bounceIn");
+        spockBtn.classList.remove("bounceIn");
+        rockBtn2.classList.remove("bounceIn");
+        paperBtn2.classList.remove("bounceIn");
+        scissorsBtn2.classList.remove("bounceIn");
+        lizardBtn2.classList.remove("bounceIn");
+        spockBtn2.classList.remove("bounceIn");
+      }
     });
 
   //CHARACTER SELECTION
@@ -143,8 +143,6 @@ function removeBounceIn(){
     lizardBtn2.classList.remove("wiggle");
     spockBtn2.classList.remove("wiggle");
   }
-
-
 
   rockBtn.addEventListener("click", function () {
     // stopAll();
@@ -209,7 +207,6 @@ function removeBounceIn(){
   });
 
   confirmBtn.addEventListener("click", function () {
-
     stopAll();
     if (real) {
       if (!character) {
