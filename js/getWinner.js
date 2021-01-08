@@ -85,7 +85,7 @@ function gamePlay(real, rounds, points, playerName) {
     cpuChoice = choice2;
   }
 
-  getAIChoice(AIChoiceURL);
+  // getAIChoice(AIChoiceURL);
 
   roundsLeft = rounds;
 
