@@ -1,3 +1,9 @@
+<!-- 
+    Joseph Racca
+    RPSLS
+    01.08.20
+ -->
+
 <!doctype html>
 <html lang="en">
 
@@ -11,196 +17,246 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- <link rel="stylesheet" href="./css/styleLight.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/wickedcss.min.css">
     <title>Big Banger</title>
+    <link rel="shortcut icon" href="./images/galaxy.jpg" />
 </head>
-<body>
-<div class="container-fluid text-center py-5">
-    <!-- <div class="mt-5 text-center">
-        <h1>RPSLS</h1>
-        <p>Created on 01.05.20 @4:05PM
-            <br>
-            by: Joseph Racca
-        </p>
-    </div> -->
 
-    <div class="row pt-5">
-        <div class="col">
-            <!-- splash -->
-            <h1>RPSLS</h1>
-            <!-- can have some graphics around here floating around -->
+<body id="bodyOdyOdy">
+
+    <div id="allTheHands" class="container limit d-none">
+        <img src="./images/Lrock.svg" id="rockBtn" class="zToBack scaler bounceIn" alt="Rock Selector"
+            style="position: absolute; top: -150px; left: -150px;">
+        <img src="./images/Lpaper.svg" id="paperBtn" class="zToBack scaler bounceIn" alt="Paper Selector"
+            style="position: absolute; top: 110px; left: -250px;">
+        <img src="./images/Lscissors.svg" id="scissorsBtn" class="zToBack scaler bounceIn" alt="Scissors Selector"
+            style="position: absolute; top: 400px; left: -200px;">
+        <img src="./images/Llizard.svg" id="lizardBtn" class="zToBack scaler bounceIn" alt="Lizard Selector"
+            style="position: absolute; top: 530px; left: -180px;">
+        <img src="./images/Lspock.svg" id="spockBtn" class="zToBack scaler bounceIn" alt="Spock Selector"
+            style="position: absolute; top: 690px; left: -260px;">
+
+        <img src="./images/Rrock.svg" id="rockBtn2" class="zToBack scaler bounceIn" alt="Rock Selector"
+            style="position: absolute; top: -15%; right: -200px;">
+        <img src="./images/Rpaper.svg" id="paperBtn2" class="zToBack scaler bounceIn" alt="Paper Selector"
+            style="position: absolute; top: 110px; right: -250px;">
+        <img src="./images/Rscissors.svg" id="scissorsBtn2" class="zToBack scaler bounceIn" alt="Scissors Selector"
+            style="position: absolute; top: 420px; right: -200px;">
+        <img src="./images/Rlizard.svg" id="lizardBtn2" class="zToBack scaler bounceIn" alt="Lizard Selector"
+            style="position: absolute; top: 550px; right: -150px;">
+        <img src="./images/Rspock.svg" id="spockBtn2" class="zToBack scaler bounceIn" alt="Spock Selector"
+            style="position: absolute; top: 690px; right: -240px;">
+    </div>
+
+    <div class="container text-center limit fadeIn" style="margin-top: 200px;">
+
+        <div class="row">
+            <div class="col">
+                <!-- splash -->
+                <h1 id="gameName" class="massive rotateIn">
+                    <span id="rspls">RPSLS</span>
+                    <span id="pride">
+                        <i class="fas fa-hand-rock"></i><i class="fas fa-hand-paper"></i><i
+                            class="fas fa-hand-scissors"></i><i class="fas fa-hand-lizard"></i><i
+                            class="fas fa-hand-spock"></i>
+                    </span>
+                </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i>?&nbsp;</i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Rock, Paper, Scissors, Lizard, Spock!
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body"
+                                style="color: #1a1a1a; text-align: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: .5px;">
+                                That's the name of the game, as popularized by the show, <strong>The Big Bang
+                                    Theory</strong>.
+                                <br><br>
+                                <b>WHAT BEATS WHAT?</b><br>
+                                <img src="./images/rpslsBW.png" alt="Who beats who in the game..." style="width: 100%">
+                                <br>
+                                <SPAN style="font-size: 10px; letter-spacing: .5px;">[GRAPHIC MODIFIED FROM ASKPYTHON.COM]</SPAN>
+                                <br>
+                                <i>As always...a <b>draw</b> when both players choose the same. Have fun!</i>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Get outta here and
+                                    start playing!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="optionsPane" class="row py-4">
+            <div class="col">
+                <h2>options</h2>
+
+                <div class="row">
+                    <div id="options1" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="aiPlayerBtn" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="aiPlayerBtn">vRobot</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="player2Btn" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="player2Btn">twoPlayer</label>
+                    </div>
+
+                    <div id="options2" class="btn-group mt-3" role="group"
+                        aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="quick1Btn" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="quick1Btn">quikee</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="bestOf5Btn" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="bestOf5Btn">bestOf5</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="bestOf7Btn" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="bestOf7Btn">bestOf7</label>
+                    </div>
+
+                    <div class="row pt-3">
+                        <div class="col">
+                            you vs. <b id="mode" class="yellow"> (no one yet)</b> <br> first to <b id="rounds"
+                                class="yellow"> (nada yet)</b>
+                        </div>
+                    </div>
+
+                    <div class="div mt-3">
+                        <div class="row px-3">
+                            <button id="startGameBtn" type="button"
+                                class="btn btn-info btn-font disabled">START</button>
+
+                            <div class="col">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- READY? -->
+        <div id="readyPane" class="row d-none pt-5">
+            <div class="col">
+                <h1>PLAYER <span id="pNum">1</span>, READY?</h1>
+                <div class="div mt-3">
+                    <div class="row px-3">
+                        <button id="selectCharBtn" type="button" class="btn btn-info btn-font">I'M READY!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="choicePane" class="row mt-3 d-none">
+            <div class="col" style="padding-top: 50px;">
+                <h2>choose wisely...</h2>
+                <h3 id="choice"></h3>
+                <div class="row px-3 pt-3">
+                    <button id="confirmBtn" type="button" class="d-none btn btn-info btn-font">CONFIRM</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div id="optionsPane" class="row py-5">
-        <div class="col">
-            <h1>GAME OPTIONS</h1>
+    <div class="container  text-center limit">
+        <div class="row px-3 pt-3">
+            <button id="cpuBtn" type="button" class="d-none btn btn-info btn-font">COMPUTER READY! SEE WHO WON</button>
+        </div>
 
-            <div class="row">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="aiPlayerBtn" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="aiPlayerBtn">Player.AI</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="player2Btn" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="player2Btn">Player.2</label>
+        <div id="resultPane" class="row mt-5 d-none">
+            <div class="col">
+                <div class="row">
+                    <h1>RESULTS</h1>
+                    <p id="roundWinner" class="yellow">Player X Wins this Round!</p>
                 </div>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <p id="nameSpace1">PLAYER 1</p>
+                        </div>
+                        <div class="row">
+                            <h3 id="p1Points">01</h3>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div id="opponentName" class="row">
+                            <p id="nameSpace2"> PLAYER 2</p>
+                        </div>
+                        <div class="row">
+                            <h3 id="p2Points">01</h3>
+                        </div>
+                    </div>
+                    <h2 id="declareWin" class="col-12">
 
-                <div class="btn-group mt-3" role="group2" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="quick1Btn" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="quick1Btn">Quick1e</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="bestOf5Btn" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="bestOf5Btn">Best of 5</label>
-
-                    <input type="radio" class="btn-check" name="btnradio" id="bestOf7Btn" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="bestOf7Btn">Best of 7</label>
+                    </h2>
                 </div>
 
                 <div class="div mt-3">
                     <div class="row px-3">
-                        <button id="startGameBtn" type="button" class="btn btn-info">START</button>
+                        <button id="contBtn" type="button" class="btn btn-info btn-font">NEXT ROUND</button>
 
-                        <div class="col">
-                        </div>
+                        <button id="refreshBtn" type="button" class="btn btn-info btn-font  d-none">BACK TO
+                            MAIN</button>
                     </div>
                 </div>
-
-
             </div>
 
-
-
         </div>
-    </div>
-
-    <!-- READY? -->
-    <div id="readyPane" class="row d-none">
-        <div class="col">
-            <h1>PLAYER <span id="pNum">1</span>, READY?</h1>
-            <div class="div mt-3">
-                <div class="row px-3">
-                    <button id="selectCharBtn" type="button" class="btn btn-info">SELECT CHARACTER</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="choicePane" class="row mt-3 d-none">
-        <div class="col">
-            <h1>SELECT A CHARACTER FOR THIS ROUND</h1>
-            <div class="div mt-3">
-                <div class="row">
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="rockBtn" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">ROCK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="paperBtn" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">PAPER</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="scissorsBtn" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">SCISSORS</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="lizardBtn" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">LIZARD</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-6 col-md d-flex justify-content-around">
-                        <div id="spockBtn" class="card characterChoices" style="width: 13rem;">
-                            <img src="./images/block.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-text">SPOCK</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row px-3 pt-3">
-                    <button id="confirmBtn" type="button" class="btn btn-info">CONFIRM</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="row px-3 pt-3">
-        <button id="cpuBtn" type="button" class="d-none btn btn-info">COMPUTER READY! SEE WHO WON</button>
-    </div>
-
-    <!-- <div class="row mt-5">
-        <div class="col">
-            <h1>PLAYER 2, READY?</h1>
-            <div class="div mt-3">
-                <div class="row px-3">
-                    <button id="selectChar2Btn" type="button" class="btn btn-info">SELECT CHARACTER</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <div id="resultPane" class="row mt-5 d-none">
-        <div class="col">
+        <div id="credits" class="slideUp pt-5 shake">
             <div class="row">
-                <h1>RESULTS</h1>
-                <p id="roundWinner">Player X Wins this Round!</p>
-            </div>
-
-            <div class="row">
-                <div class="col-6">
-                    <div class="row"><p>P1</p></div>
-                    <div class="row"><h3 id="p1Points">01</h3></div>
-                </div>
-                <div class="col-6">
-                    <div id="opponentName" class="row"><p>P2</p></div>
-                    <div class="row"><h3 id="p2Points">01</h3></div>
-                </div>
-                <h2 id="declareWin" class="col-12">
-
-                </h2>
-            </div>
-
-            <div class="div mt-3">
-                <div class="row px-3">
-                    <button id="contBtn" type="button" class="btn btn-info">NEXT ROUND</button>
-
-                    <button id="refreshBtn" type="button" class="btn btn-info  d-none">BACK TO MAIN</button>
+                <div class="col center">
+                    <p>JOSEPH<a href="https://www.instagram.com/jracca/" target="_blank"><img
+                                src="./images/jrLogoWhite.svg" style="width: 50px;" class="logo pl-1 mx-2"
+                                alt="Joseph Racca's Logo"></a>RACCA</p>
                 </div>
             </div>
         </div>
+
+        <!-- FOR AUDIO PLAYER -->
+        <figure style="padding-top: 200px;">
+            <span style="opacity: 20%;">
+                <figcaption>
+                    <p style="font-size:14px;"> <i class="fas fa-volume-up"></i> + auditory stimulus!</p>
+                </figcaption>
+                <audio controls src="./audio/final.mp3" autoplay>
+                    Your browser does not support the
+                    <code>audio</code> element.
+                </audio>
+            </span>
+            <figcaption>
+                <p style="font-size:10px;"><i class="fas fa-music"></i> by <a
+                        href="https://www.youtube.com/watch?v=0iIQ_y6Bv7k">StephenSeymourMusic</a></p>
+            </figcaption>
+        </figure>
     </div>
 
-
-</div>
-
-<!-- Optional JavaScript; choose one of the two! -->
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/484192cc2d.js" crossorigin="anonymous"></script>
 </body>
-
-<script type="module" src="./js/script.js"></script>
 
 </html>

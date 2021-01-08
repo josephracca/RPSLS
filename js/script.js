@@ -14,11 +14,16 @@ let choicePane = document.getElementById("choicePane");
 let resultPane = document.getElementById("resultPane");
 let declareWin = document.getElementById("declareWin");
 
-// let charactersSelected = [];
-
 let p1Points = document.getElementById("p1Points");
 let p2Points = document.getElementById("p2Points");
 let roundWinner = document.getElementById("roundWinner");
+
+let mode = document.getElementById("mode");
+let rounds = document.getElementById("rounds");
+
+let allTheHands = document.getElementById("allTheHands");
+
+let bodyOdyOdy = document.getElementById("bodyOdyOdy");
 
 let loadPage = () => {
 refreshBtn.addEventListener("click", function () {
@@ -29,35 +34,60 @@ refreshBtn.addEventListener("click", function () {
     gameTypeSelected = cpuGamePlay;
     realPlayer = false;
     opponent = "CPU";
+    mode.innerText = "A ROBOT";
+    nameSpace2.innerText = "THE ROBOT";
+    checkAgain();
   });
   let player2Btn = document.getElementById("player2Btn").addEventListener("click", function () {
     gameTypeSelected = twoGamePlay;
     realPlayer = true;
     opponent = "Player 2";
+    mode.innerText = "A NON-ROBOT";
+    checkAgain();
+    nameSpace2.innerText = "PLAYER 2";
   });
 
   let quick1Btn = document.getElementById("quick1Btn").addEventListener("click", function () {
     roundsSelected = 1;
     ptsToWin = 1;
+    rounds.innerText = "ONE AND DONE!";
+    checkAgain();
   });
   let bestOf5Btn = document.getElementById("bestOf5Btn").addEventListener("click", function () {
     roundsSelected = 5;
     ptsToWin = 3;
+    rounds.innerText = "THR33";
+    checkAgain();
   });
   let bestOf7Btn = document.getElementById("bestOf7Btn").addEventListener("click", function () {
     roundsSelected = 7;
     ptsToWin = 4;
+    rounds.innerText = "5IVE";
+    checkAgain();
   });
 
-  let startGameBtn = document.getElementById("startGameBtn").addEventListener("click", function () {
-    if (!gameTypeSelected || roundsSelected === 0) {
+  let startGameBtn = document.getElementById("startGameBtn");
+  let gameName = document.getElementById("gameName");
+  let credits = document.getElementById("credits");
+
+  function checkAgain(){
+    if (!gameTypeSelected || (typeof roundsSelected === 'undefined')) {
+          } else {
+            startGameBtn.classList.remove("disabled");
+          }
+  }
+  
+  startGameBtn.addEventListener("click", function () {
+    if (!gameTypeSelected || (typeof roundsSelected === 'undefined')) {
 alert('choose options to play');
     } else {
-
+      gameName.classList.add("opacity", "darkBlue");
       startGame(gameTypeSelected, roundsSelected, ptsToWin);
+      credits.classList.add("darkBlue", "opacity");
       hideOptions();
       readyPane.classList.remove("d-none");
       winner.gamePlay(realPlayer, roundsSelected, ptsToWin, opponent);
+      allTheHands.classList.remove("d-none");
     }
   });
 };
