@@ -1,3 +1,5 @@
+import * as wiggle from "./wiggle.js";
+
 let charactersSelected = [];
 let rounds = 0;
 let points = 0;
@@ -17,7 +19,7 @@ function getWinner(array, numRounds, thresh, playerName) {
 
   if (p1 === p2) {
     resultPane.classList.remove("d-none");
-    roundWinner.innerText = `Wah wah wahhhh...you both chose" ${p1}. Go again.`;
+    roundWinner.innerHTML = `Wah wah wahhhh...you both chose <b>"${p1.toUpperCase()}"</b>. Go again.`;
   } else {
     if (
       (p1 === "rock" && (p2 === "scissors" || p2 === "lizard")) ||
@@ -27,10 +29,10 @@ function getWinner(array, numRounds, thresh, playerName) {
       (p1 === "spock" && (p2 === "rock" || p2 === "scissors"))
     ) {
       player1pts++;
-      roundWinner.innerText = `Player 1 wins the round! ${p1} beats ${p2}`;
+      roundWinner.innerHTML = `<b>Player 1</b> wins the round!<br> <b>"${p1.toUpperCase()}"</b> beats <b>"${p2.toUpperCase()}"</b>`;
     } else {
       player2pts++;
-      roundWinner.innerText = `${playerName} wins the round! ${p2} beats ${p1}`;
+      roundWinner.innerHTML = `<b>${playerName}</b> wins the round!<br> <b>"${p2.toUpperCase()}"</b> beats <b>"${p1.toUpperCase()}"</b>`;
     }
     roundsLeft--;
     // return numRounds;
@@ -98,34 +100,90 @@ function gamePlay(real, rounds, points, playerName) {
     .addEventListener("click", function () {
       readyPane.classList.add("d-none");
       choicePane.classList.remove("d-none");
+      // rockBtn.classList.remove("disabled");
+      confirmBtn.classList.add("d-none");
+      //disable and turn opacity down
     });
 
   //CHARACTER SELECTION
-  let rockBtn = document
-    .getElementById("rockBtn")
-    .addEventListener("click", function () {
-      character = "rock";
-    });
-  let paperBtn = document
-    .getElementById("paperBtn")
-    .addEventListener("click", function () {
-      character = "paper";
-    });
-  let scissorsBtn = document
-    .getElementById("scissorsBtn")
-    .addEventListener("click", function () {
-      character = "scissors";
-    });
-  let lizardBtn = document
-    .getElementById("lizardBtn")
-    .addEventListener("click", function () {
-      character = "lizard";
-    });
-  let spockBtn = document
-    .getElementById("spockBtn")
-    .addEventListener("click", function () {
-      character = "spock";
-    });
+  let choice = document.getElementById("choice");
+
+  let rockBtn = document.getElementById("rockBtn");
+
+    function stopAll(){
+      rockBtn.classList.remove("wiggle");
+      paperBtn.classList.remove("wiggle");
+      scissorsBtn.classList.remove("wiggle");
+      lizardBtn.classList.remove("wiggle");
+      spockBtn.classList.remove("wiggle");
+      rockBtn2.classList.remove("wiggle");
+      paperBtn2.classList.remove("wiggle");
+      scissorsBtn2.classList.remove("wiggle");
+      lizardBtn2.classList.remove("wiggle");
+      spockBtn2.classList.remove("wiggle");
+  }
+
+  rockBtn.addEventListener("click", function () {
+    // stopAll();
+    character = "rock";
+    wiggle.wiggleMe(character, rockBtn);
+  });
+  let paperBtn = document.getElementById("paperBtn");
+
+  paperBtn.addEventListener("click", function () {
+    character = "paper";
+    wiggle.wiggleMe(character, paperBtn);
+  });
+  let scissorsBtn = document.getElementById("scissorsBtn");
+
+  scissorsBtn.addEventListener("click", function () {
+    character = "scissors";
+    wiggle.wiggleMe(character, scissorsBtn);
+  });
+  let lizardBtn = document.getElementById("lizardBtn");
+
+  lizardBtn.addEventListener("click", function () {
+    character = "lizard";
+    wiggle.wiggleMe(character, lizardBtn);
+  });
+  let spockBtn = document.getElementById("spockBtn");
+
+  spockBtn.addEventListener("click", function () {
+    character = "spock";
+    wiggle.wiggleMe(character, spockBtn);
+  });
+
+  //Right Side
+  let rockBtn2 = document.getElementById("rockBtn2");
+
+  rockBtn2.addEventListener("click", function () {
+    character = "rock";
+    wiggle.wiggleMe(character, rockBtn2);
+  });
+  let paperBtn2 = document.getElementById("paperBtn2");
+
+  paperBtn2.addEventListener("click", function () {
+    character = "paper";
+    wiggle.wiggleMe(character, paperBtn2);
+  });
+  let scissorsBtn2 = document.getElementById("scissorsBtn2");
+
+  scissorsBtn2.addEventListener("click", function () {
+    character = "scissors";
+    wiggle.wiggleMe(character, scissorsBtn2);
+  });
+  let lizardBtn2 = document.getElementById("lizardBtn2");
+
+  lizardBtn2.addEventListener("click", function () {
+    character = "lizard";
+    wiggle.wiggleMe(character, lizardBtn2);
+  });
+  let spockBtn2 = document.getElementById("spockBtn2");
+
+  spockBtn2.addEventListener("click", function () {
+    character = "spock";
+    wiggle.wiggleMe(character, spockBtn2);
+  });
 
   confirmBtn.addEventListener("click", function () {
     if (real) {
@@ -149,7 +207,7 @@ function gamePlay(real, rounds, points, playerName) {
       } else if (charactersSelected.length === 0) {
         pushName();
 
-        cpuBtn.classList.remove("d-none");
+        // cpuBtn.classList.remove("d-none");
         confirmBtn.classList.add("d-none");
 
         character = cpuChoice.toLowerCase();
@@ -157,13 +215,14 @@ function gamePlay(real, rounds, points, playerName) {
         pushName();
         confirmBtn.classList.remove("d-none");
         getWinner(charactersSelected, roundsLeft, points, playerName);
-        cpuBtn.classList.add("d-none");
+        // cpuBtn.classList.add("d-none");
         charactersSelected = [];
 
         // cpuBtn.addEventListener("click", function () {}); SHOULD YOU WANT TO USE A SEPARATE BUTTON <------
       }
       character = "";
     }
+    choice.innerText = "";
   });
 
   contBtn.addEventListener("click", function () {
@@ -171,6 +230,7 @@ function gamePlay(real, rounds, points, playerName) {
     readyPane.classList.remove("d-none");
     pNum.innerText = "1";
     charactersSelected = [];
+    stopAll();
   });
 }
 
