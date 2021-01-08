@@ -62,7 +62,7 @@ refreshBtn.addEventListener("click", function () {
   let bestOf7Btn = document.getElementById("bestOf7Btn").addEventListener("click", function () {
     roundsSelected = 7;
     ptsToWin = 4;
-    rounds.innerText = "5IVE";
+    rounds.innerText = "4OUR";
     checkAgain();
   });
 
